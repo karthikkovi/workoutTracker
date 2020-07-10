@@ -13,17 +13,13 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/workout', {
     useFindAndModify: false,
 });
 
-app.get('/', (req, res) =>
-    res.sendFile(__dirname + '/public/views/index.html')
-);
+app.get('/', (req, res) => res.sendFile(__dirname + '/public/index.html'));
 
 app.get('/exercise', (req, res) =>
-    res.sendFile(__dirname + '/public/views/exercise.html')
+    res.sendFile(__dirname + '/public/exercise.html')
 );
 
-app.get('/stats', (req, res) =>
-    res.sendFile(__dirname + '/public/views/stats.html')
-);
+app.get('/stats', (req, res) => res.sendFile(__dirname + '/public/stats.html'));
 
 app.get('/api/workout', (req, res) => {
     res.send(200);
